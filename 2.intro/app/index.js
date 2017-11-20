@@ -36,7 +36,10 @@ Badge.propTypes = {
   img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  contactNumbers: PropTypes.array
+  contactNumbers: PropTypes.arrayOf(PropTypes.shape({
+    type: PropTypes.string,
+    number: PropTypes.string
+  }))
 };
 
 ReactDOM.render(
@@ -44,11 +47,11 @@ ReactDOM.render(
     name='Alexis Jimenez'
     username='mickambar19'
     img='https://avatars3.githubusercontent.com/u/9437615?s=460&v=4'
-    contactNumbers='dsds'
-    // contactNumbers={[
-    //   { type: 'home', number: '33392809'},
-    //   { type: 'cellphone', number: '0443333392809'}
-    // ]}
+    // contactNumbers='dsds'
+     contactNumbers={[
+       { type: 'home', number: '33392809'},
+       { type: 'cellphone', number: '0443333392809'}
+     ]}
   />,
   document.getElementById('app')
 );
