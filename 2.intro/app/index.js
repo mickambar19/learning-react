@@ -5,8 +5,6 @@ require('./index.css');
 
 class Badge extends React.Component{
   render(){
-    var name='Alexis Miguel';
-    var friends=['Luigi', 'Raul', 'Diego'];
     return (
       <div>
         <img
