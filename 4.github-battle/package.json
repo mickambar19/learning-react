@@ -6,13 +6,17 @@
   "scripts": {
     "start": "webpack-dev-server --open"
   },
-  "babel":{
-    "presets": ["env", "react"]
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
   },
