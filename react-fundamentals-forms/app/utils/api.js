@@ -4,9 +4,9 @@ var id = "f763bb66d3ad6d2baf68";
 var sec = "9383cc84eb9474e608f3c37f56319ff3933ba1bd";
 var params = `?client_id=${id}&client_secret=${sec}`;
 
-function getProfile(username) {
-  return axios.get(`https://api.github.com/users/${username}${params}`)
-    .then(({data}) => data);
+async function getProfile(username) {
+  const profile = await axios.get(`https://api.github.com/users/${username}${params}`);
+  return profile.data
 }
 
 // getProfile('mickambar19')
@@ -31,14 +31,9 @@ function handleError (error) {
   return null;
 }
 
-function getUserData(player){
-  return Promise.all([
-    getProfile(player),
-    getRepos(player)
-  ]).then(([profile, repos]) => ({
-    profile,
-    score: calculateScore(profile, repos)
-  }))
+async function getUserData(player){
+  const [profile, repos ] = await Promise.all([getProfile(player), getRepos(player)]);
+  return { profile, score: repos}
 }
 
 function sortPlayers(players) {
@@ -57,3 +52,52 @@ export function fetchPopularRepos (language) {
   return axios.get(encodedURI)
     .then( ({data})=> data.items );
 }
+
+
++ numeroAtomico:Int
++ nombre:Cadena
++ Nombre2:Cadena
++ simbolo:Cadena
++ clasificacion:Cadena
++ grupo:Int
++ periodo:Int
++ bloque:Cadena
++ masa:float
++ Valencia:Cadena
++ codigoFamilia:Int
++ funcion:Cadena
++ humano:float
++ aplicaciones:Cadena
++ estado:Cadena
++ estructura:Cadena
++ color:Cadena
++ densidad:float
++ fusion:float
++ ebullicon:float
++ calor:float
++ evaporizacion:float
++ calorFusion:float
++ electrica:float
++ termica:float
++ Configuracionelectronica:float
++ radioAtomico:float
++ radioCovalente:float
++ volumennumeroOxida:float
++ cion:Cadena
++ electrones:Cadena
++ afinidad:float
++ electronegatividad:float
++ primeraEnergia:float
++ segundaEnergia:float
++ terceraEnergia:float
++ descubridor:Cadena
++ lugar:Cadena
++ anio:Cadena
++ origen:Cadena
++ obtencion:Cadena
++ atmosfera:double
++ corteza:double
++ oceanos:double
++ universo:double
++ salud:cadena
++ ambiente:cadena

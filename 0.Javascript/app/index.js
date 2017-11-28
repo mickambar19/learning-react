@@ -147,16 +147,76 @@ function getTweets() {
 // calculatePayment(100, 0, 0);
 // calculatePayment(100, 5, 10);
 
-function isRequired(name){
-  throw new Error(name + ' is required');
-}
-function calculatePayment(price = isRequired('price'), salesTax = 0.047, discount = 0) {
-  console.log('Tax', salesTax);
-  console.log('discount', discount);
-  // math
+// function isRequired(name){
+//   throw new Error(name + ' is required');
+// }
+// function calculatePayment(price = isRequired('price'), salesTax = 0.047, discount = 0) {
+//   console.log('Tax', salesTax);
+//   console.log('discount', discount);
+//   // math
+//
+// }
+//
+// calculatePayment(100, 0, 0);
+// calculatePayment(100, 5, 10);
+// calculatePayment();
+
+// Promises
+let promiseToCleanTheRoom = new Promise(function(resolve, reject){
+  //cleaning the room
+  let isClean = false;
   
+  if(isClean){
+    resolve('Clean');
+  }else{
+    reject('not Clean');
+  }
+});
+
+promiseToCleanTheRoom.then(function(fromResolve){
+  console.log('The room is  ' + fromResolve)
+}).catch(function(fromReject){
+  console.log('The room is  ' + fromReject)
+});
+
+let cleanRoom = function(){
+  return new Promise(function(resolve,reject){
+    resolve('Cleaned the room')
+  });
+};
+
+let removeGarbage = function(p){
+  return new Promise(function(resolve,reject){
+    resolve('remove Garbage')
+  });
+};
+
+let winIceCream = function(p){
+  return new Promise(function(resolve,reject){
+    resolve('won Icecream')
+  });
+};
+
+cleanRoom().then(function(status){
+  return removeGarbage();
+}).then(function () {
+  return winIceCream();
+}).then(function (status) {
+  console.log(status);
+});
+
+
+Promise.all([cleanRoom(), removeGarbage(), winIceCream()]).then( function (status) {
+  console.log(status)
+});
+
+Promise.race([cleanRoom(), removeGarbage(), winIceCream()]).then( function (status) {
+  console.log(status)
+});
+
+function getUser () {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve({name: 'Tyler'}), 2000)
+  })
 }
 
-calculatePayment(100, 0, 0);
-calculatePayment(100, 5, 10);
-calculatePayment();
