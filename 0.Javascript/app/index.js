@@ -3,32 +3,32 @@
 //   obj[key] = value
 //   return obj
 // }
+//
+// function objectify (key, value){
+//   return {
+//     [key]: value
+//   }
+// }
+//
+// console.log(objectify('tyles', 27));
 
-function objectify (key, value){
-  return {
-    [key]: value
-  }
-}
-
-console.log(objectify('tyles', 27));
-
-function welcomeMsg(fName, lName, email){
-  return "Hello," + fName + " " + lName + ". The email you used to sign up is " + email
-}
-
-console.log(welcomeMsg('Alexis', 'Jimenez', 'mickambar19@gmail.com'));
-
-function welcomeMsg2(fName, lName, email){
-  return "Hello," + fName + " " + lName + ". The email you used to sign up is  \"" + email + "\""
-}
-
-console.log(welcomeMsg2('Alexis', 'Jimenez', 'mickambar19@gmail.com'));
-
-function welcomeMsg3(fName, lName, email){
-  return `Hello, ${fName} ${lName}. The email you used to sign up is  ${email}`
-}
-
-console.log(welcomeMsg2('Alexis', 'Jimenez', 'mickambar19@gmail.com'));
+// function welcomeMsg(fName, lName, email){
+//   return "Hello," + fName + " " + lName + ". The email you used to sign up is " + email
+// }
+//
+// console.log(welcomeMsg('Alexis', 'Jimenez', 'mickambar19@gmail.com'));
+//
+// function welcomeMsg2(fName, lName, email){
+//   return "Hello," + fName + " " + lName + ". The email you used to sign up is  \"" + email + "\""
+// }
+//
+// console.log(welcomeMsg2('Alexis', 'Jimenez', 'mickambar19@gmail.com'));
+//
+// function welcomeMsg3(fName, lName, email){
+//   return `Hello, ${fName} ${lName}. The email you used to sign up is  ${email}`
+// }
+//
+// console.log(welcomeMsg2('Alexis', 'Jimenez', 'mickambar19@gmail.com'));
 
 /**
  * Template Literals (Template strings)
@@ -42,44 +42,44 @@ console.log(welcomeMsg2('Alexis', 'Jimenez', 'mickambar19@gmail.com'));
 //   "</div>"
 // }
 
-function welcomeTemplate(fName, lName, email){
-  return `<div>
-    <h1>
-    Hello,  ${fName} ${lName} .
-    </h1>
-    <i>The mail you used to sign up is ${email} </i>
-    </div>`
-}
-document.body.innerHTML = welcomeTemplate('Alexis', 'Jimenez', 'mickambar19@gmail.com');
+// function welcomeTemplate(fName, lName, email){
+//   return `<div>
+//     <h1>
+//     Hello,  ${fName} ${lName} .
+//     </h1>
+//     <i>The mail you used to sign up is ${email} </i>
+//     </div>`
+// }
+// document.body.innerHTML = welcomeTemplate('Alexis', 'Jimenez', 'mickambar19@gmail.com');
 
 /**
  * Arrow Functions
  * */
 //fn declaration
-function add(x, y) {
-  return x + y;
-}
-
-// fn expression
-var add = function (x,y){
-  return x + y;
-}
-
-var add = (x,y) => {
-  return x + y
-};
-
-add(1,2);
-
-let users = ['Alexis', 'Miguel'];
-
-users.map(function (user) {
-  //
-});
-
-users.map(()=>{
-
-});
+// function add(x, y) {
+//   return x + y;
+// }
+//
+// // fn expression
+// var add = function (x,y){
+//   return x + y;
+// }
+//
+// var add = (x,y) => {
+//   return x + y
+// };
+//
+// add(1,2);
+//
+// let users = ['Alexis', 'Miguel'];
+//
+// users.map(function (user) {
+//   //
+// });
+//
+// users.map(()=>{
+//
+// });
 
 
 // function getTweets() {
@@ -103,13 +103,13 @@ users.map(()=>{
 //     })
 // }
 
-function getTweets() {
-  return fetch('https://api.users.com/' + uid)
-    .then(response => response.json())
-    .then(response => response.data )
-    .then(tweets => tweets.filter(tweet =>  tweet.stars > 50))
-    .then(tweets => tweets.filter(tweet =>  tweet.rts > 50))
-}
+// function getTweets() {
+//   return fetch('https://api.users.com/' + uid)
+//     .then(response => response.json())
+//     .then(response => response.data )
+//     .then(tweets => tweets.filter(tweet =>  tweet.stars > 50))
+//     .then(tweets => tweets.filter(tweet =>  tweet.rts > 50))
+// }
 
 
 /**
@@ -162,61 +162,67 @@ function getTweets() {
 // calculatePayment();
 
 // Promises
-let promiseToCleanTheRoom = new Promise(function(resolve, reject){
-  //cleaning the room
-  let isClean = false;
-  
-  if(isClean){
-    resolve('Clean');
-  }else{
-    reject('not Clean');
-  }
-});
+// let promiseToCleanTheRoom = new Promise(function(resolve, reject){
+//   //cleaning the room
+//   let isClean = false;
+//
+//   if(isClean){
+//     resolve('Clean');
+//   }else{
+//     reject('not Clean');
+//   }
+// });
+//
+// promiseToCleanTheRoom.then(function(fromResolve){
+//   console.log('The room is  ' + fromResolve)
+// }).catch(function(fromReject){
+//   console.log('The room is  ' + fromReject)
+// });
+//
+// let cleanRoom = function(){
+//   return new Promise(function(resolve,reject){
+//     resolve('Cleaned the room')
+//   });
+// };
+//
+// let removeGarbage = function(p){
+//   return new Promise(function(resolve,reject){
+//     resolve('remove Garbage')
+//   });
+// };
+//
+// let winIceCream = function(p){
+//   return new Promise(function(resolve,reject){
+//     resolve('won Icecream')
+//   });
+// };
+//
+// cleanRoom().then(function(status){
+//   return removeGarbage();
+// }).then(function () {
+//   return winIceCream();
+// }).then(function (status) {
+//   console.log(status);
+// });
+//
+//
+// Promise.all([cleanRoom(), removeGarbage(), winIceCream()]).then( function (status) {
+//   console.log(status)
+// });
+//
+// Promise.race([cleanRoom(), removeGarbage(), winIceCream()]).then( function (status) {
+//   console.log(status)
+// });
+//
+// function getUser () {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => resolve({name: 'Tyler'}), 2000)
+//   })
+// }
 
-promiseToCleanTheRoom.then(function(fromResolve){
-  console.log('The room is  ' + fromResolve)
-}).catch(function(fromReject){
-  console.log('The room is  ' + fromReject)
-});
 
-let cleanRoom = function(){
-  return new Promise(function(resolve,reject){
-    resolve('Cleaned the room')
-  });
-};
+var colors = ['red', 'blue', 'green'];
 
-let removeGarbage = function(p){
-  return new Promise(function(resolve,reject){
-    resolve('remove Garbage')
-  });
-};
-
-let winIceCream = function(p){
-  return new Promise(function(resolve,reject){
-    resolve('won Icecream')
-  });
-};
-
-cleanRoom().then(function(status){
-  return removeGarbage();
-}).then(function () {
-  return winIceCream();
-}).then(function (status) {
-  console.log(status);
-});
-
-
-Promise.all([cleanRoom(), removeGarbage(), winIceCream()]).then( function (status) {
-  console.log(status)
-});
-
-Promise.race([cleanRoom(), removeGarbage(), winIceCream()]).then( function (status) {
-  console.log(status)
-});
-
-function getUser () {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve({name: 'Tyler'}), 2000)
-  })
+for (var i = 0; i < color.count(); i++){
+    console.log([i])
 }
-
