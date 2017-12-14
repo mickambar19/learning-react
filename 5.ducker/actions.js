@@ -110,7 +110,6 @@
   replies,
   duckId,
   lastUpdated: Date.now(),
-}
 
 {
   type: ADD_REPLY,
@@ -193,3 +192,5 @@
   type: REMOVE_LIKE,
   duckId
 }
+
+
