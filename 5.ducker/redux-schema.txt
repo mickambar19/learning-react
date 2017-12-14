@@ -1,0 +1,77 @@
+{
+  users: {
+    isAuthed,
+    isFetching,
+    error,
+    authedId,
+    [uid]: {
+      lastUpdated,
+      info: {
+        name,
+        uid,
+        avatar
+      }
+    }
+  }
+  modal: {
+    duck,
+    isOpen
+  }
+  ducks: {
+    isFetching,
+    error,
+    [duckId]: {
+      avatar,
+      duckId,
+      name,
+      text,
+      timestamp,
+      uid
+    }
+  }
+
+  usersDucks: {
+    isFetching,
+    error,
+    [uid]: {
+      lastUpdated,
+      ducksIds: [duckId, duckId, duckId]
+    }
+  }
+
+  likeCount: {
+    [duckId]: 0
+  }
+
+  usersLikes: {
+    duckId: true
+  }
+
+  replies: {
+    error,
+    isFetching,
+    [duckId]: {
+      replies: {
+        [replyId]: {
+          name,
+          comment,
+          uid,
+          timestamp,
+          avatar
+        }
+      }
+    }
+  }
+
+  listeners: {
+    [listenerId]: false
+  }
+
+  feed: {
+    isFetching,
+    error,
+    newDucksAvailable: false,
+    ducksIdsToAdd: [duckId, ducId],
+    duckIds:[duckId, ducId]
+  }
+}

@@ -25,7 +25,7 @@
 
 /likeCount
   duckId
-    0
+   0
 
 /usersDucks
   uid
@@ -48,4 +48,4 @@
 
 /usersLikes
   uid
-    duckId: true
+  duckId: true
