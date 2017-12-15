@@ -1,9 +1,4 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-class Main extends Component {
-  render() {
-    return <div>Hola</div>
-  }
-}
-
-ReactDOM.render(<Main />, document.getElementById('app'))
+import routes from './config/routes'
+ReactDOM.render(routes, document.getElementById('app'))
